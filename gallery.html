@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #b0b06c;
+
+/* Header styling */
+    .header {
+      background-color: #F9B14F; /* Green background */
+      color: white;             /* White text color */
+      padding: 15px;            /* Spacing inside the header */
+      text-align: center;       /* Center the text */
+    }
+
+    /* Navigation links styling */
+    .nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;   /* Dark background for nav */
+    }
+
+    .nav a {
+      color: white;             /* White text */
+      padding: 14px 20px;       /* Padding for nav links */
+      text-decoration: none;    /* Remove underline */
+      text-transform: uppercase;/* Uppercase text */
+    }
+
+    .nav a:hover {
+      background-color: #575757;/* Hover effect */
+    }
+    .fa {
+      padding: 5px;
+      font-size: 20px;
+      width: 25px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+    }
+
+}
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!-- Header Section -->
+  <div class="header">
+    <h1>Jay's Website</h1>
+    <p>TAKE A LOOK AT MY GALLERY COLLECTIONS!</p>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="myself.html">Myself</a>
+    <a href="family.html">Family</a>
+    <a href="friends.html">Friends</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="education.html">Education</a>
+    <a href="hobby.html">Hobby</a>
+  </div>
+
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+    <img src="image/myself1.jpg" style="width:100%">
+    <img src="image/zaty3.jpg" style="width:100%">
+    <img src="image/myself2.jpg" style="width:100%">
+    <img src="image/kawansekolah.jpg" style="width:100%">
+    <img src="image/kronibundle.jpg" style="width:100%">
+    <img src="image/kawanuni.jpg" style="width:100%">
+    <img src="image/reunion.jpg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="image/ibuabah.jpg" style="width:100%">
+    <img src="image/fatimah1.jpg" style="width:100%">
+    <img src="image/4laki2.jpg" style="width:100%">
+    <img src="image/fatimah3.jpg" style="width:100%">
+    <img src="image/gambarkelas.jpg" style="width:100%">
+    <img src="image/family.jpg" style="width:100%">
+    <img src="image/zaty2.jpg" style="width:100%">  
+  </div>
+  <div class="column">
+    <img src="image/3beradik.jpg" style="width:100%">
+    <img src="image/ijat2.jpg" style="width:100%">
+    <img src="image/4laki.jpg" style="width:100%">
+    <img src="image/ijat4.jpg" style="width:100%">
+    <img src="image/ijatpangkor.jpg" style="width:100%">
+    <img src="image/familysewa.jpg" style="width:100%">
+    <img src="image/withamir.jpeg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="image/ijatnfaris.jpg" style="width:100%">
+    <img src="image/fullhouse.jpg" style="width:100%">
+    <img src="image/ekal.jpg" style="width:100%">
+    <img src="image/eman.jpg" style="width:100%">
+    <img src="image/ijat5.jpg" style="width:100%">
+    <img src="image/zaty1.jpg" style="width:100%">
+    <img src="image/myselfhome.jpg" style="width:100%">  
+
+</div>
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// Full-width images
+function one() {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "100%";  // IE10
+    elements[i].style.flex = "100%";
+  }
+}
+
+// Two images side by side
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "50%";  // IE10
+    elements[i].style.flex = "50%";
+  }
+}
+
+// Four images side by side
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+<a href="#top"><img src="image/top.png"></a>
+<div id="bottom" class="centered">
+</body>
+</html>
